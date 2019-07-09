@@ -1,0 +1,16 @@
+server:
+  port: 8002
+spring:
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1
+    baggage-keys: SessionId
+  zipkin:
+    base-url: http://10.200.148.96:9411/
+  application:
+    name: sleuth-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.200.148.96:7001/eureka/
