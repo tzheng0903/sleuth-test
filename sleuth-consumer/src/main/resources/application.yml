@@ -7,9 +7,15 @@ spring:
       probability: 1
     baggage-keys: SessionId
   zipkin:
-    base-url: http://10.200.148.96:9411/
+#    base-url: http://10.200.148.96:9411/
+    sender:
+      type: kafka
+    service:
+      name: ${spring.application.name}
   application:
     name: sleuth-consumer
+  kafka:
+    bootstrap-servers: 10.200.148.96:9092
 eureka:
   client:
     service-url:

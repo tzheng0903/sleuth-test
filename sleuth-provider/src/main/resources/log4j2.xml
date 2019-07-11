@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <!--添加一个控制台追加器-->
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>[%-5p] %d %c - %m%n</pattern>
+            </PatternLayout>
+        </Console>
+        <Kafka name="Kafka" topic="providerlog" syncSend="true">
+            <PatternLayout pattern="%date %message" />
+            <Property name="bootstrap.servers">10.200.148.96:9092</Property>
+        </Kafka>
+        <File name="File" fileName="logs/test.log" append="false">
+            <PatternLayout pattern="%date %message" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="Kafka" />
+            <AppenderRef ref="File" />
+        </Root>
+    </Loggers>
+</Configuration>
