@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -14,9 +15,16 @@
     <name>sleuth-test</name>
     <description>Demo project for Spring Boot</description>
 
+    <modules>
+        <module>sleuth-consumer</module>
+        <module>sleuth-provider</module>
+        <module>swagger-config</module>
+        <module>sleuth-provider-api</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -81,6 +89,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--<dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form</artifactId>
+            <version>3.7.0</version>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/cn.springcloud.feign/venus-cloud-starter-feign -->
+        <dependency>
+            <groupId>cn.springcloud.feign</groupId>
+            <artifactId>venus-cloud-starter-feign</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>

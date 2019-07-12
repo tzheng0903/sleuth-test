@@ -1,6 +1,6 @@
 package cn.evun.test.sleuthconsumer.controller;
 
-import cn.evun.test.sleuthconsumer.api.HelloService;
+import cn.evun.test.sleuth.api.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

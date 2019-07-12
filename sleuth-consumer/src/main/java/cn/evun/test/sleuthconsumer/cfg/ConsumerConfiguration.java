@@ -1,5 +1,6 @@
 package cn.evun.test.sleuthconsumer.cfg;
 
+import feign.Logger;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -25,5 +26,10 @@ public class ConsumerConfiguration {
     public ExecutorService executorService(){
         ExecutorService executorService = Executors.newScheduledThreadPool(2);
         return new TraceableExecutorService(beanFactory,executorService);
+    }
+
+    @Bean
+    public Logger.Level feignLoggerLevel(){
+        return Logger.Level.FULL;
     }
 }

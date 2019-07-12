@@ -20,3 +20,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://10.200.148.96:7001/eureka/
+
+swagger2:
+  basepackage: cn.evun.test.sleuthconsumer.controller
+  title: titlesss
+  desc: descsssss
+  mainterner: tzheng
+  version: 1.0

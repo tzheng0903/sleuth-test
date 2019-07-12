@@ -17,6 +17,16 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>cn.evun.test</groupId>
+            <artifactId>swagger-config</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.evun.test</groupId>
+            <artifactId>sleuth-provider-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -4,15 +4,15 @@
         <!--添加一个控制台追加器-->
         <Console name="Console" target="SYSTEM_OUT" follow="true">
             <PatternLayout>
-                <pattern>[%-5p] %d %c - %m%n</pattern>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
             </PatternLayout>
         </Console>
         <Kafka name="Kafka" topic="providerlog" syncSend="true">
-            <PatternLayout pattern="%date %message" />
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
             <Property name="bootstrap.servers">10.200.148.96:9092</Property>
         </Kafka>
         <File name="File" fileName="logs/test.log" append="false">
-            <PatternLayout pattern="%date %message" />
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
         </File>
     </Appenders>
     <Loggers>
